@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        background: #d80000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 800px;
+        min-height: 520px;
+        display: flex;
+        background: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .left {
+        width: 50%;
+        background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80') no-repeat center;
+        background-size: cover;
+    }
+
+    .right {
+        width: 50%;
+        padding: 30px;
+    }
+
+    h2 {
+        border-bottom: 2px solid #d80000;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: 14px;
+        display: block;
+        margin-top: 10px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 6px;
+        background: #eee;
+        border: none;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 18px;
+        padding: 12px;
+        background: #d80000;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #b00000;
+    }
+
+    a {
+        font-size: 13px;
+        display: block;
+        margin-top: 12px;
+        color: #555;
+        text-decoration: none;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="left"></div>
+
+    <div class="right">
+        <h2>Register</h2>
+
+        <form action="index.html">
+            <label>Full Name *</label>
+            <input type="text" placeholder="Enter full name" required>
+
+            <label>Email *</label>
+            <input type="email" placeholder="Enter email" required>
+
+            <label>Password *</label>
+            <input type="password" placeholder="Enter password" required minlength="6">
+
+            <label>Confirm Password *</label>
+            <input type="password" placeholder="Confirm password" required minlength="6">
+
+            <label>Role *</label>
+            <select required>
+                <option value="">Select Role</option>
+                <option>Student</option>
+                <option>Alumni / Mentor</option>
+            </select>
+
+            <button type="submit">REGISTER</button>
+        </form>
+
+        <a href="index.html">Already have an account?</a>
+    </div>
+</div>
+
+</body>
+</html>

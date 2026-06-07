@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mentorship</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        background: #f4f4f4;
+    }
+
+    .header {
+        background: #d80000;
+        color: white;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu {
+        position: relative;
+    }
+
+    .menu button {
+        background: white;
+        color: #d80000;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .menu-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 45px;
+        background: white;
+        width: 180px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        border-radius: 5px;
+        overflow: hidden;
+        z-index: 10;
+    }
+
+    .menu-content a {
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .menu-content a:hover {
+        background: #f4f4f4;
+    }
+
+    .menu:hover .menu-content {
+        display: block;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    input, textarea, select {
+        padding: 10px;
+        margin-top: 10px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    table {
+        width: 100%;
+        background: white;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    th, td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+    }
+
+    th {
+        background: #f4f4f4;
+    }
+
+    button {
+        background: #d80000;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        margin: 3px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #b00000;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    @media (max-width: 700px) {
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h2>Mentorship Slots</h2>
+
+    <div class="menu">
+        <button>Menu ☰</button>
+
+        <div class="menu-content">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="booking.html">Booking</a>
+            <a href="profile.html">Profile</a>
+            <a href="mentorship.html">Mentorship</a>
+            <a href="index.html">Logout</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h3>Add Mentorship Slot</h3>
+
+        <form>
+            <input type="text" placeholder="Mentorship Title" required>
+            <textarea rows="4" placeholder="Description" required></textarea>
+
+            <div class="form-row">
+                <input type="date" required>
+                <input type="time" required>
+            </div>
+
+            <select required>
+                <option value="">Select Status</option>
+                <option>Available</option>
+                <option>Booked</option>
+                <option>Cancelled</option>
+            </select>
+
+            <button type="submit">Add Slot</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>Slots List</h3>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Career Guidance</td>
+                <td>Discussion about IT career pathway.</td>
+                <td>1 June 2025</td>
+                <td>10:00 AM</td>
+                <td>Available</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Resume Review</td>
+                <td>Mentor helps student improve resume.</td>
+                <td>5 June 2025</td>
+                <td>2:00 PM</td>
+                <td>Booked</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

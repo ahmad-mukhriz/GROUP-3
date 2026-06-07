@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Booking</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        background: #f4f4f4;
+    }
+
+    .header {
+        background: #d80000;
+        color: white;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu {
+        position: relative;
+    }
+
+    .menu button {
+        background: white;
+        color: #d80000;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .menu-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 45px;
+        background: white;
+        min-width: 180px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        border-radius: 5px;
+        overflow: hidden;
+        z-index: 10;
+    }
+
+    .menu-content a {
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .menu-content a:hover {
+        background: #f4f4f4;
+    }
+
+    .menu:hover .menu-content {
+        display: block;
+    }
+
+    .container {
+        width: 500px;
+        margin: 40px auto;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    h2, h3 {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+        background: #d80000;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background: #b00000;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background: #f4f4f4;
+    }
+
+    @media (max-width: 550px) {
+        .container {
+            width: 95%;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h2>Booking</h2>
+
+    <div class="menu">
+        <button>Menu ☰</button>
+
+        <div class="menu-content">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <a href="mentorship.html">Mentorship</a>
+            <a href="index.html">Logout</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Book Mentorship Session</h2>
+
+        <form>
+            <label>Select Mentor:</label>
+            <select required>
+                <option value="">Choose mentor</option>
+                <option>Ahmad Ali - Information Technology</option>
+                <option>Siti Aminah - Finance</option>
+                <option>Daniel Tan - Engineering</option>
+            </select>
+
+            <label>Select Available Slot:</label>
+            <select required>
+                <option value="">Choose slot</option>
+                <option>12 November 2025, 10:00 AM - 12:00 PM</option>
+                <option>15 November 2025, 2:00 PM - 4:00 PM</option>
+                <option>20 November 2025, 4:00 PM - 6:00 PM</option>
+            </select>
+
+            <label>Booking Date:</label>
+            <input type="date" required>
+
+            <label>Booking Time:</label>
+            <select required>
+                <option value="">Select time</option>
+                <option>8:00 AM - 10:00 AM</option>
+                <option>10:00 AM - 12:00 PM</option>
+                <option>2:00 PM - 4:00 PM</option>
+                <option>4:00 PM - 6:00 PM</option>
+            </select>
+
+            <label>Status:</label>
+            <select required>
+                <option>Pending</option>
+                <option>Confirmed</option>
+                <option>Cancelled</option>
+            </select>
+
+            <button type="submit">BOOK SESSION</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>My Booking List</h3>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Mentor</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>B001</td>
+                <td>Ahmad Ali</td>
+                <td>12 Nov 2025</td>
+                <td>Confirmed</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h3>Feedback</h3>
+
+        <form>
+            <label>Select Booking:</label>
+            <select required>
+                <option>B001 - Ahmad Ali</option>
+                <option>B002 - Siti Aminah</option>
+            </select>
+
+            <label>Rating:</label>
+            <select required>
+                <option>5 - Excellent</option>
+                <option>4 - Good</option>
+                <option>3 - Average</option>
+                <option>2 - Poor</option>
+                <option>1 - Very Poor</option>
+            </select>
+
+            <textarea rows="5" placeholder="Write your feedback here..." required></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

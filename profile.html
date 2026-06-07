@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Profile</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        background: #f4f4f4;
+    }
+
+    .header {
+        background: #d80000;
+        color: white;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu {
+        position: relative;
+    }
+
+    .menu button {
+        background: white;
+        color: #d80000;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .menu-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 45px;
+        background: white;
+        width: 180px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        border-radius: 5px;
+        overflow: hidden;
+        z-index: 10;
+    }
+
+    .menu-content a {
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .menu-content a:hover {
+        background: #f4f4f4;
+    }
+
+    .menu:hover .menu-content {
+        display: block;
+    }
+
+    .container {
+        width: 800px;
+        margin: 30px auto;
+    }
+
+    .card {
+        background: white;
+        padding: 25px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        border-radius: 8px;
+    }
+
+    .profile-top {
+        text-align: center;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: #ddd;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        margin: 10px 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td {
+        padding: 12px;
+        vertical-align: top;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .btn {
+        background: #d80000;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 20px;
+        font-size: 15px;
+    }
+
+    .btn:hover {
+        background: #b00000;
+    }
+
+    .skill-box {
+        background: #f4f4f4;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+    }
+
+    @media (max-width: 850px) {
+        .container {
+            width: 95%;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h2>User Profile</h2>
+
+    <div class="menu">
+        <button>Menu ☰</button>
+
+        <div class="menu-content">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="booking.html">Booking</a>
+            <a href="mentorship.html">Mentorship</a>
+            <a href="index.html">Logout</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <div class="profile-top">
+            <img src="https://via.placeholder.com/120" class="profile-img" alt="Profile Image">
+            <h2>Ali Bin Abu</h2>
+            <p>Computer Science Student</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Personal Information</h3>
+
+        <form>
+            <table>
+                <tr>
+                    <td width="30%"><b>Full Name</b></td>
+                    <td><input type="text" placeholder="Enter full name" required></td>
+                </tr>
+
+                <tr>
+                    <td><b>Email</b></td>
+                    <td><input type="email" placeholder="Enter email" required></td>
+                </tr>
+
+                <tr>
+                    <td><b>Phone Number</b></td>
+                    <td><input type="tel" placeholder="Enter phone number"></td>
+                </tr>
+
+                <tr>
+                    <td><b>Course</b></td>
+                    <td><input type="text" placeholder="Enter course"></td>
+                </tr>
+
+                <tr>
+                    <td><b>Industry Interest</b></td>
+                    <td>
+                        <select>
+                            <option>Software Engineering</option>
+                            <option>Cyber Security</option>
+                            <option>Data Science</option>
+                            <option>Finance</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><b>Status</b></td>
+                    <td>
+                        <select>
+                            <option>Active</option>
+                            <option>Inactive</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><b>Bio</b></td>
+                    <td><textarea rows="4" placeholder="Write your bio"></textarea></td>
+                </tr>
+            </table>
+
+            <button class="btn" type="submit">Update Profile</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>Skills & Interests</h3>
+        <div class="skill-box">HTML & CSS</div>
+        <div class="skill-box">Web Development</div>
+        <div class="skill-box">UI/UX Design</div>
+    </div>
+
+    <div class="card">
+        <h3>Mentorship Information</h3>
+        <p><b>Total Sessions Joined:</b> 12</p>
+        <p><b>Preferred Industry:</b> Information Technology</p>
+        <p><b>Current Mentor:</b> Ahmad Ali</p>
+    </div>
+
+</div>
+
+</body>
+</html>
